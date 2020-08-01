@@ -37,7 +37,13 @@ client.on('ready', () =>{
     })
   })
   command(client, 'embed', (message) => {
-      const embed = new Discord.MessageEmbed().setTitle('Example text embed')
+      const logo = 'https://cdn.shopify.com/s/files/1/1737/1965/products/image_21_600x600.png?v=1569129911'
+
+      const embed = new Discord.MessageEmbed()
+      .setTitle('Example text embed')
+      .setURL('https://www.youtube.com/watch?v=lm5o50ICyMQ')
+      .setAuthor(message.author.username)
+      .setThumbnail(logo)
 
     message.channel.send(embed)
   })

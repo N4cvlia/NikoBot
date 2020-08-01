@@ -17,7 +17,7 @@ bot.on('message', message=>{
 
    const args = message.content.slice(prefix.length).trim().split(/ +/g);
    const command = args.shift().toLocaleLowerCase();
-   if (command --- 'Hello') {
+   if (command === 'Hello') {
        const testEmbed = new Discord.RichEmbed()
            .setColor(0x6509ed)
            .setTitle('Test Embed')

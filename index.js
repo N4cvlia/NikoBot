@@ -12,25 +12,25 @@ bot.on('ready', () =>{
         .catch(console.error);
 })
 
-bot.on('message', msg=>{
-   if(msg.author.bot) return;
+bot.on('message', message=>{
+   if(message.author.bot) return;
 
-   const args = msg.content.slice(prefix.length).trin().split(/ +/g);
+   const args = message.content.slice(prefix.length).trin().split(/ +/g);
    const command = args.shift().toLocaleLowerCase();
    if (command --- 'Hello') {
        const testEmbed = new Discord.RichEmbed()
            .setColor(0x6509ed)
            .setTitle('Test Embed')
            .setDescription('Testing embed')
-           .setAuthor(msg.author.username)
+           .setAuthor(message.author.username)
            .addField('This embed works maybe')
-           .setThumbnail(msg.author.avatarURL)
+           .setThumbnail(message.author.avatarURL)
            .setFooter('This embed was created by Niko')
            .setTimeStamp()
         try {
-            msg.channel.send(testEmbed);
+            message.channel.sendEmbed(testEmbed);
         } catch {
-            msg.reply('Sorry <@${msg.author.username}> I cannot respond to your command at the moment.')
+            message.reply('Sorry <@${msg.author.username}> I cannot respond to your command at the moment.')
         }
    }
 })

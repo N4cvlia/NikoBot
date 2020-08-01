@@ -12,7 +12,7 @@ bot.on('ready', () =>{
         .catch(console.error);
 })
 
-bot.on("message", message=>{
+bot.on("message", message => {
    if(message.author.bot) return;
 
    const args = message.content.slice(prefix.length).trim().split(/ +/g);

@@ -8,7 +8,7 @@ const firstMessage = require('./first-message')
 client.on('ready', () =>{
     console.log('This bot is online');
 
-    firstMessage(client, '736902596748640326', 'hello world!!!',['🔥', '✨'])
+    firstMessage(client, '736902596748640326', 'hello world!!!', ['🔥', '✨'])
 
     command(client, ['ping', 'test'], (message) => {
         message.channel.send('Pong!')

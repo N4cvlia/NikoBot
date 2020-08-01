@@ -12,4 +12,4 @@ client.on('ready', () =>{
     })
 })
 
-client.login(Procfile.token);
+client.login(Procfile.Worker);

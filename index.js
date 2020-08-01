@@ -12,7 +12,7 @@ bot.on('ready', () =>{
         .catch(console.error);
 })
 
-bot.on('message', message=>{
+bot.on("message", message=>{
    if(message.author.bot) return;
 
    const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -28,11 +28,11 @@ bot.on('message', message=>{
            .setFooter('This embed was created by Niko')
            .setTimeStamp()
         try {
-            message.channel.sendEmbed(testEmbed);
+            message.reply(testEmbed);
         } catch {
-            message.reply('Sorry <@${msg.author.username}> I cannot respond to your command at the moment.')
+            message.reply(`Sorry <@${msg.author.username}> I cannot respond to your command at the moment.`)
         }
-   }
+    }
 })
 
 bot.login(process.env.token);

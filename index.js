@@ -44,6 +44,29 @@ client.on('ready', () =>{
       .setURL('https://www.youtube.com/watch?v=lm5o50ICyMQ')
       .setAuthor(message.author.username)
       .setThumbnail(logo)
+      .setFooter('Dis is a Epic footer', logo)
+      .setColor('#FF0000')
+      .addFields({
+        name: 'Field 1',
+        value: 'Hello world',
+        inline: true
+    },{
+        name: 'Field 2',
+        value: 'Hello world',
+        inline: true
+    },{
+        name: 'Field 3',
+        value: 'Hello world',
+        inline: true
+    },{
+        name: 'Field 4',
+        value: 'Hello world',
+        inline: true
+    },{
+        name: 'Field 5',
+        value: 'Hello world',
+        inline: true
+    })
 
     message.channel.send(embed)
   })

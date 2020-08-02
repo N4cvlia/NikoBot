@@ -103,7 +103,23 @@ client.on('ready', () =>{
     message.channel.send(embed)  
   })
   command(client, 'help', (message) => {
-    message.channel.send('Coming soon')
+    message.channel.send(`
+These are my supported commands:
+
+**!help** - Displays the help menu
+**!Status** - Changes bots Bio
+**!ping** - Bot replys with Pong!
+**!serverinfo** - Displays server info
+**!clearchannel** - Clears the Channel chat
+ `)
+  })
+
+  const { prefix } = config
+  
+  client.user.setPresence({
+    activity: {
+      name: `"${prefix}help" for help`,
+    }
   })
 })
 

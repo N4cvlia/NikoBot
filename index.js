@@ -70,6 +70,9 @@ client.on('ready', () =>{
 
     message.channel.send(embed)
   })
+  command(client, 'serverinfo', message => {
+    message.channel.send('Coming soon')
+  })
 })
 
 client.login(process.env.token);

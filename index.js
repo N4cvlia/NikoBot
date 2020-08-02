@@ -78,7 +78,7 @@ client.on('ready', () =>{
     const icon = guild.iconURL()
 
     const embed = new Discord.MessageEmbed()
-      .setTitle('Server info for "${name}"')
+      .setTitle(`Server info for "${name}"`)
       .setThumbnail(icon)
       .addFields(
       {

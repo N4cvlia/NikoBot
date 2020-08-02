@@ -47,8 +47,8 @@ client.on('ready', () =>{
       .setFooter('Dis is a Epic footer', logo)
       .setColor('#FF0000')
       .addFields({
-        name: 'Field 1',
-        value: 'Hello world',
+        name: 'Amdydyd',
+        value: 'Bleeds only 1 liters',
         inline: true
     },{
         name: 'Field 2',

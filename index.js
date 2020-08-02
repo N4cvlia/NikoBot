@@ -121,6 +121,20 @@ These are my supported commands:
       name: `"${prefix}help" for help`,
     }
   })
+  command(client, 'ban', message => {
+    const { member, mentions} = message
+
+    if (
+      member.hasPermission('ADMINISTRATOR') || 
+      member.hasPermission('BAN_MEMBERS') 
+    ) {
+      console.log('Works')
+    } else {
+      message.channel.send(
+        `<@${member.id}> You do not have permission to use this command.`
+      )
+    }    
+  })
 })
 
 client.login(process.env.token);

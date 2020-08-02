@@ -80,6 +80,7 @@ client.on('ready', () =>{
     const embed = new Discord.MessageEmbed()
       .setTitle(`Server info for "${name}"`)
       .setThumbnail(icon)
+      .setColor('#FF0000')
       .addFields(
       {
         name: 'Region',

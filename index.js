@@ -102,6 +102,9 @@ client.on('ready', () =>{
 
     message.channel.send(embed)  
   })
+  command(client, 'help', (message) => {
+    message.channel.send('Coming soon')
+  })
 })
 
 client.login(process.env.token);

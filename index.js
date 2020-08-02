@@ -97,6 +97,10 @@ client.on('ready', () =>{
       {
         name: 'AFK Timeout',
         value: afkTimeout / 60,
+      },
+      {
+        name: 'Roles',
+        value: roles,
       }
     )
 

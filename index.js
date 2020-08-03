@@ -114,6 +114,9 @@ These are my supported commands:
 **!ping** - Bot replys with Pong!
 **!serverinfo** - Displays server info
 **!clearchannel** - Clears the Channel chat
+**!kick** - Kicks the target from the server
+**!ban** - Bans the target from the server
+**!poll** - Adds Thumbs up/down Emojis to the message above
  `)
   })
 

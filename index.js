@@ -4,6 +4,7 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./Command')
 const poll = require('./poll')
+const welcome = require ('./welcome')
 
 client.on('ready', () =>{
     console.log('This bot is online');
@@ -170,6 +171,8 @@ These are my supported commands:
     }    
   })
   poll(client)
+
+  welcome(client)
 })
 
 client.login(process.env.token);

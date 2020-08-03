@@ -4,7 +4,8 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./Command')
 const poll = require('./poll')
-const welcome = require ('./welcome')
+const welcome = require('./welcome')
+const memberCount = require('./member-count')
 
 client.on('ready', () =>{
     console.log('This bot is online');
@@ -173,6 +174,8 @@ These are my supported commands:
   poll(client)
 
   welcome(client)
+
+  memberCount(client)
 })
 
 client.login(process.env.token);

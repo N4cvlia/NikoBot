@@ -136,11 +136,11 @@ These are my supported commands:
         targetMember.ban()
         message.channel.send(`${tag} That user has been banned.`)
       } else {
-        message.channel.send(`<@${tag}> Please specify someone to ban.`)
+        message.channel.send(`${tag} Please specify someone to ban.`)
       }
     } else {
       message.channel.send(
-        `<@${tag}> You do not have permission to use this command.`
+        `${tag} You do not have permission to use this command.`
       )
     }    
   })

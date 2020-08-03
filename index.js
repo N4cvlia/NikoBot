@@ -6,6 +6,7 @@ const command = require('./Command')
 const poll = require('./poll')
 const welcome = require('./welcome')
 const memberCount = require('./member-count')
+const sendMessage = require('./send-message')
 
 client.on('ready', () =>{
     console.log('This bot is online');
@@ -179,6 +180,10 @@ These are my supported commands:
   welcome(client)
 
   memberCount(client)
+
+  const guild = client.guilds.cache.get('736890426753286145')
+  const channel = guild.channels.cache.get('739796281198903393')
+
 })
 
 client.login(process.env.token);

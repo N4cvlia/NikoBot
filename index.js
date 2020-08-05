@@ -7,7 +7,9 @@ const poll = require('./poll')
 const welcome = require('./welcome')
 const memberCount = require('./member-count')
 const sendMessage = require('./send-message')
-const mongo = require('./mongo')
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://NikoBot:tanki777@nikobot.phngf.mongodb.net/NikoBot?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 client.on('ready', async () =>{
     console.log('This bot is online');
@@ -182,16 +184,11 @@ These are my supported commands:
 
   memberCount(client)
 
-  const guild = client.guilds.cache.get('736890426753286145')
-  const channel = guild.channels.cache.get('739796281198903393')
-
-  await mongo().then((mongoose) => {
-    try {
-      console.log('Connected to mongo!')
-    } finally {
-      mongoose.connection.close()
-    }
-  })
+  client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+  });
 })
 
 client.login(process.env.token);

@@ -185,7 +185,7 @@ These are my supported commands:
   const guild = client.guilds.cache.get('736890426753286145')
   const channel = guild.channels.cache.get('739796281198903393')
 
-  await mongo().then (mongoose => {
+  await mongo().then((mongoose) => {
     try {
       console.log('Connected to mongo!')
     } finally {

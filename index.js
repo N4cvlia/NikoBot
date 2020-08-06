@@ -186,17 +186,13 @@ These are my supported commands:
   const guild = client.guilds.cache.get('736890426753286145')
   const channel = guild.channels.cache.get('739796281198903393')
 
-  const connectToMongoDB = async () => {
-    await mongo().then((Mongoose) => {
-      try {
-        console.log('Connected to mongoDB!')
-      } finally {
-       mongoose.connection.close()
-      }
-    })
-  }
-
-  connectToMongoDB()
+  await mongo().then((mongoose) => {
+    try {
+      console.log('Connected to mongo!')
+    } finally {
+      mongoose.connection.close()
+    }
+  })
 })
 
 client.login(process.env.token);

@@ -1,17 +1,29 @@
+const mongo = require('./mongo')
+const command = require('./Command')
+const welcomeSchema = require('./schemas/welcome-schema')
+const { connection } = require('mongoose')
+
 module.exports =  client => {
-    const channelId = '739811773393141820' // welcome channel
-    const targetChannelId = '736895174034063438' // rules
+    //!setwelcome <command>
 
-    client.on('guildMemberAdd', member => {
-        console.log(member)
+    command(client, 'setwelcome', async (message) => {
+        const { member, channel, content, guild } = message
 
-        const message = `Welcome <@${
-            member.id
-        }> To The Server! Check out ${member.guild.channels.cache
-            .get(targetChannelId)
-            .toString()}`
+        if (!member.hasPermissions('ADMINISTRATOR')) {
+          channel.send('You do not have permission to run this command.')
+          return
+        }
 
-        const channel = member.guild.channels.cache.get(channelId)
-        channel.send(message)
+        await mongo().then(async (mongoose) => {
+            try {
+              await new welcomeSchema({
+                  _id: guild.id,
+                  channelId: channel.id,
+                  text: content
+              }).save()
+            } finally {
+                mongoose.connection.close()
+            }
+        })
     })
 }

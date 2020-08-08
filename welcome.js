@@ -1,7 +1,7 @@
 const mongo = require('./mongo')
 const command = require('./Command')
 const welcomeSchema = require('./schemas/welcome-schema')
-Emitter.setMaxListeners(13)
+client.setMaxListeners(0)
 
 module.exports = (client) => {
   //!setwelcome <message>

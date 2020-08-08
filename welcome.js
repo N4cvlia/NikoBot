@@ -1,4 +1,4 @@
-const mongo = require('./mongo')
+const mongo = require('./mongo').EventEmitter.prototype._maxListeners = 100
 const command = require('./Command')
 const welcomeSchema = require('./schemas/welcome-schema')
 

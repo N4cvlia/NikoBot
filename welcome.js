@@ -1,5 +1,5 @@
 const mongo = require('./mongo')
-const command = require('./command')
+const command = require('./Command')
 const welcomeSchema = require('./schemas/welcome-schema')
 
 module.exports = (client) => {

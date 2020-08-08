@@ -183,7 +183,7 @@ These are my supported commands:
 
   memberCount(client)
 
-  client.setMaxListeners(0)
+  client.setMaxListeners(50)
 
   const guild = client.guilds.cache.get('736890426753286145')
   const channel = guild.channels.cache.get('739796281198903393')
